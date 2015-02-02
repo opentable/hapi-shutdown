@@ -37,6 +37,7 @@ __.register(_task_)__
 
 Register a task to be run before server.stop is called. Can be called as part of another plugin, or using `server.after()`.
 
+Param: `task`
 ```
 {
   taskname: 'mytask', // used for logging and to guard against multiple registrations
@@ -47,6 +48,8 @@ Register a task to be run before server.stop is called. Can be called as part of
   timeout: 2000 // time in ms to wait for the task to complete
 }
 ```
+
+Returns: a joi validation error for the task.
 
 __Logging__:
 
