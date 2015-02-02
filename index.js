@@ -17,6 +17,8 @@ exports.register = function(server, options, next){
     });
   });
 
+  server.expose('register', sigterm.register);
+
   next();
 };
 

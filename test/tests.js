@@ -109,12 +109,27 @@ describe('hapi-shutdown', function(){
     });
   });
 
+  it('should expose the register method', function(done){
+    var config = {};
+    var server = {
+      log: function(){ },
+      root: { stop: function(){} },
+      expose: function(key, value){
+        key.should.eql('register');
+        done();
+      }
+    };
+
+    plugin.register(server, config, function(){});
+  });
+
   it('should catch the SIGTERM signal', function(done){
     var stopCalled = false;
     var config = {};
     var server = {
       log: function(){ },
-      root: { stop: function(options, cb){ stopCalled = true; cb(); } }
+      root: { stop: function(options, cb){ stopCalled = true; cb(); } },
+      expose: function(){}
     };
 
     plugin.register(server, config, function(){});
