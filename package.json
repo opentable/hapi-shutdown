@@ -1,6 +1,6 @@
 {
   "name": "hapi-shutdown",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "handle SIGTERM and register triggers to be run before the server stops",
   "main": "index.js",
   "scripts": {
