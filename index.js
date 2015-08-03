@@ -7,6 +7,7 @@ exports.register = function(server, options, next){
     return next(res.error);
   }
 
+  sigterm.logger = function(msg){ server.log(["shutdown"], msg); };
   process.on('SIGTERM', function(){
     server.log(["shutdown"], "got SIGTERM; running triggers before shutdown");
     sigterm.handler(function(err){
