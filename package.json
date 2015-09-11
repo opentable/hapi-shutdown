@@ -1,6 +1,6 @@
 {
   "name": "hapi-shutdown",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "handle SIGTERM and register triggers to be run before the server stops",
   "main": "index.js",
   "scripts": {
@@ -29,8 +29,5 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-mocha-test": "^0.11.0",
     "should": "^4.3.0"
-  },
-  "peerDependencies": {
-    "hapi": "^8.0.0"
   }
 }
