@@ -9,19 +9,30 @@ describe('hapi-shutdown', function(){
   });
 
   it('should run all the given tasks', function(done){
-    var wasRun = false;
+    var wasRun1 = false;
+    var wasRun2 = false;
 
     sigterm.register({
-      taskname: 'mytask',
+      taskname: 'mytask1',
       task: function(cb){
-        wasRun = true;
+        wasRun1 = true;
+        cb();
+      },
+      timeout: 0
+    });
+
+    sigterm.register({
+      taskname: 'mytask2',
+      task: function(cb){
+        wasRun2 = true;
         cb();
       },
       timeout: 0
     });
 
     sigterm.handler(function(){
-      wasRun.should.eql(true);
+      wasRun1.should.eql(true);
+      wasRun2.should.eql(true);
       done();
     });
   });
