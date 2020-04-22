@@ -21,7 +21,7 @@
   "homepage": "https://github.com/opentable/hapi-shutdown",
   "dependencies": {
     "async": "^0.9.0",
-    "joi": "^5.1.0"
+    "@hapi/joi": "^17"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
